@@ -1,0 +1,6 @@
+name = PUM Front Custom
+description = Custom Views and Functionality for publicly available part of PUM site
+package = PUM
+core = 7.x
+version = "7.x-1.0"
+project = pum_front
