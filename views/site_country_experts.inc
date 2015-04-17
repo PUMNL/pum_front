@@ -2,7 +2,14 @@
 
 $cc_reltype_id = civicrm_api3('RelationshipType', 'getvalue', array('name_a_b' => 'Country Coordinator is', 'return' => 'id'));
 $rep_reltype_id = civicrm_api3('RelationshipType', 'getvalue', array('name_a_b' => 'Representative is', 'return' => 'id'));
-$po_reltype_id = civicrm_api3('RelationshipType', 'getvalue', array('name_a_b' => 'Project Officer for', 'return' => 'id'));
+
+try {
+$po_reltype_id = civicrm_api3('RelationshipType', 'getvalue', array('name_a_b' => 'Project Officer', 'return' => 'id'));
+
+} catch (Exception $e) {
+  $po_reltype_id = civicrm_api3('RelationshipType', 'getvalue', array('name_a_b' => 'Project Officer for', 'return' => 'id'));
+}
+
 
 $view = new view();
 $view->name = 'site_country_experts';
