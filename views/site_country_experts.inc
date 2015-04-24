@@ -99,6 +99,11 @@ $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
 $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_relationship';
 $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
 $handler->display->display_options['filters']['is_active']['value'] = '1';
+/* Filter criterion: CiviCRM Relationships: Case ID */
+$handler->display->display_options['filters']['case_id']['id'] = 'case_id';
+$handler->display->display_options['filters']['case_id']['table'] = 'civicrm_relationship';
+$handler->display->display_options['filters']['case_id']['field'] = 'case_id';
+$handler->display->display_options['filters']['case_id']['operator'] = 'empty';
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
@@ -161,6 +166,11 @@ $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
 $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_relationship';
 $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
 $handler->display->display_options['filters']['is_active']['value'] = '1';
+/* Filter criterion: CiviCRM Relationships: Case ID */
+$handler->display->display_options['filters']['case_id']['id'] = 'case_id';
+$handler->display->display_options['filters']['case_id']['table'] = 'civicrm_relationship';
+$handler->display->display_options['filters']['case_id']['field'] = 'case_id';
+$handler->display->display_options['filters']['case_id']['operator'] = 'empty';
 
 /* Display: Block rep */
 $handler = $view->new_display('block', 'Block rep', 'block_2');
@@ -277,6 +287,12 @@ $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
 $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_relationship';
 $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
 $handler->display->display_options['filters']['is_active']['value'] = '1';
+/* Filter criterion: CiviCRM Relationships: Case ID */
+$handler->display->display_options['filters']['case_id']['id'] = 'case_id';
+$handler->display->display_options['filters']['case_id']['table'] = 'civicrm_relationship';
+$handler->display->display_options['filters']['case_id']['field'] = 'case_id';
+$handler->display->display_options['filters']['case_id']['operator'] = 'empty';
+
 $translatables['site_country_experts'] = array(
   t('Master'),
   t('Expert'),
