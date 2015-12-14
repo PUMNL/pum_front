@@ -87,6 +87,11 @@ $handler->display->display_options['arguments']['civicrm_country_id']['default_a
 $handler->display->display_options['arguments']['civicrm_country_id']['summary']['number_of_records'] = '0';
 $handler->display->display_options['arguments']['civicrm_country_id']['summary']['format'] = 'default_summary';
 $handler->display->display_options['arguments']['civicrm_country_id']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+    3 => 'OR',
+);
 /* Filter criterion: CiviCRM Relationships: Relationship Type A-to-B */
 $handler->display->display_options['filters']['relationship_type']['id'] = 'relationship_type';
 $handler->display->display_options['filters']['relationship_type']['table'] = 'civicrm_relationship';
@@ -94,16 +99,47 @@ $handler->display->display_options['filters']['relationship_type']['field'] = 'r
 $handler->display->display_options['filters']['relationship_type']['value'] = array(
   $rep_reltype_id => $rep_reltype_id,
 );
+$handler->display->display_options['filters']['relationship_type']['group'] = 1;
 /* Filter criterion: CiviCRM Relationships: Is Relationship Active */
 $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
 $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_relationship';
 $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
 $handler->display->display_options['filters']['is_active']['value'] = '1';
+$handler->display->display_options['filters']['is_active']['group'] = 1;
 /* Filter criterion: CiviCRM Relationships: Case ID */
 $handler->display->display_options['filters']['case_id']['id'] = 'case_id';
 $handler->display->display_options['filters']['case_id']['table'] = 'civicrm_relationship';
 $handler->display->display_options['filters']['case_id']['field'] = 'case_id';
 $handler->display->display_options['filters']['case_id']['operator'] = 'empty';
+$handler->display->display_options['filters']['case_id']['group'] = 1;
+/* Filter criterion: CiviCRM Relationships: Start Date */
+$handler->display->display_options['filters']['start_date']['id'] = 'start_date';
+$handler->display->display_options['filters']['start_date']['table'] = 'civicrm_relationship';
+$handler->display->display_options['filters']['start_date']['field'] = 'start_date';
+$handler->display->display_options['filters']['start_date']['operator'] = '<=';
+$handler->display->display_options['filters']['start_date']['value']['value'] = 'today';
+$handler->display->display_options['filters']['start_date']['value']['type'] = 'offset';
+$handler->display->display_options['filters']['start_date']['group'] = 2;
+/* Filter criterion: CiviCRM Relationships: Start Date */
+$handler->display->display_options['filters']['start_date_1']['id'] = 'start_date_1';
+$handler->display->display_options['filters']['start_date_1']['table'] = 'civicrm_relationship';
+$handler->display->display_options['filters']['start_date_1']['field'] = 'start_date';
+$handler->display->display_options['filters']['start_date_1']['operator'] = 'empty';
+$handler->display->display_options['filters']['start_date_1']['group'] = 2;
+/* Filter criterion: CiviCRM Relationships: End Date */
+$handler->display->display_options['filters']['end_date']['id'] = 'end_date';
+$handler->display->display_options['filters']['end_date']['table'] = 'civicrm_relationship';
+$handler->display->display_options['filters']['end_date']['field'] = 'end_date';
+$handler->display->display_options['filters']['end_date']['operator'] = '>=';
+$handler->display->display_options['filters']['end_date']['value']['value'] = 'today';
+$handler->display->display_options['filters']['end_date']['value']['type'] = 'offset';
+$handler->display->display_options['filters']['end_date']['group'] = 3;
+/* Filter criterion: CiviCRM Relationships: End Date */
+$handler->display->display_options['filters']['end_date_1']['id'] = 'end_date_1';
+$handler->display->display_options['filters']['end_date_1']['table'] = 'civicrm_relationship';
+$handler->display->display_options['filters']['end_date_1']['field'] = 'end_date';
+$handler->display->display_options['filters']['end_date_1']['operator'] = 'empty';
+$handler->display->display_options['filters']['end_date_1']['group'] = 3;
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
